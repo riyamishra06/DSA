@@ -73,3 +73,70 @@ for (let i = 0; i < n; i++) {
     }
     console.log(row);
 }
+
+
+//linear search//
+
+let arr = [2, 4, 6, 8, 10, 12, 14];
+let found = false;
+let key = 20;
+
+for (let i = 0; i < arr.length; i++){
+    if (arr[i] === key) {
+        found = true;
+        break;
+    }
+}
+
+if (!found) {
+    console.log("Key is not found");
+}
+
+
+//largest no in array
+let arr = [4, 5, 10, 23, 45]
+let max = arr[0];
+
+for (let i = 0; i < arr.length; i++){
+    if (arr[i] > max) {
+        max = arr[i]
+    }
+}
+console.log(max)
+
+//Binary search
+let arr = [3, 4, 5, 6, 7, 8, 9];
+let key = 3;
+let start = 0;
+let end = arr.length - 1;
+let index = arr[0];
+
+while (start <= end) {
+    let mid = (start + end) / 2;
+
+    if (arr[mid] == key) {
+        index = mid;
+        console.log('Index of key is' +" " + key + " " +index)
+    }
+    if (arr[mid] < key) {
+        start = mid + 1;
+    }
+    else{
+        end = mid -1;
+    }
+   
+}
+ //Reverse array
+ let arr = [2, 3, 4, 5];
+let start = 0;
+let end = arr.length - 1;
+
+while (start < end) {
+    let temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+    
+}
+console.log(arr);
