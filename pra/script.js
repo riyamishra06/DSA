@@ -140,3 +140,30 @@ while (start < end) {
     
 }
 console.log(arr);
+
+
+//Print pair
+let arr = [2,4,6,8,10];
+
+for(let i =0;i<arr.length;i++){
+    let curr = arr[i];
+    for(let j =i+1;j<arr.length;j++){
+        console.log( " (" + curr + " , " + arr[j]+")");
+    }
+    
+}
+
+//Subpair
+let arr = [2,4,6,8,10];
+for(let i = 0;i<arr.length;i++){
+    let curr = arr[i];
+    for(let j = i;j<arr.length;j++){
+        let subarray = " ";
+        for(let k = i;k<=j;k++){
+            subarray += arr[k] + " ";
+        }
+        console.log(subarray);
+    }
+}
+
+//sum od subarray
