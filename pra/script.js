@@ -167,3 +167,19 @@ for(let i = 0;i<arr.length;i++){
 }
 
 //sum od subarray
+
+//Sort
+//let arr = [5,4,6,3,7,2];
+for(let i = 0 ;i <arr.length-1;i++){
+    let minpoint = i;
+    for(let j = i + 1;j<arr.length;j++){
+        if(arr[minpoint] > arr[j]){
+            minpoint = j;
+        }
+    }
+    let temp = arr[i];
+    arr[i] = arr[minpoint];
+    arr[minpoint] = temp;
+    
+}
+console.log(arr);
