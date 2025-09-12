@@ -183,3 +183,36 @@ for(let i = 0 ;i <arr.length-1;i++){
     
 }
 console.log(arr);
+
+//counting sort
+let arr = [3, 2, 1, 4, 5, 3, 2];
+
+for (let i = 0; i < arr.length - 1; i++) {
+    // Step 1: Find the largest element
+    let largest = 0;
+    for (let i = 0; i < arr.length; i++) {
+        largest = Math.max(largest, arr[i]);
+    }
+
+    // Step 2: Create and initialize the count array
+    let count = new Array(largest + 1).fill(0);
+
+    // Step 3: Count the occurrences
+    for (let i = 0; i < arr.length; i++) {
+        count[arr[i]]++;
+    }
+
+    // Step 4: Overwrite original array in sorted order
+    let j = 0;
+    for (let i = 0; i < count.length; i++) {
+        while (count[i] > 0) {
+            arr[j] = i;
+            j++;
+            count[i]--;
+        }
+    }
+
+    break; // Exit the loop since sorting is done; your outer loop is unnecessary
+}
+
+console.log(arr);
